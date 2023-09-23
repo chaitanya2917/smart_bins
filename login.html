@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Smart Waste Management Dashboard</title>
+    <link rel="stylesheet" href="login-style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/f6029eaaf5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <label for="userId">👤User ID:</label>
+            
+            <input type="text" id="userId" placeholder="Enter user ID" name="userId" required>
+            <label for="userPassword">🔑Password:</label>
+            <input type="password" id="userPassword" placeholder="Enter your password" name="userPassword" required>
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <p></p>
+            <button type="submit" onclick="login()">Login</button>
+            <div class="login-register"><p>Don't have an account? <a href="register.html" class="register-link">Register</a></p></div>
+        </form>
+    </div>
+    <script>
+        function login(){
+            var userId = document.getElementById("userId").value;
+            var userPassword = document.getElementById("userPassword").value;
+            if(userId == "" || userPassword == ""){
+                alert("Field cannot be empty!!");
+                return false;
+            }
+            else if(userId=="20BRS1157" && userPassword=="20BRS1157"){
+                window.location.href = "afterlogin.html";
+                alert("Login Successful");
+            }
+            else{
+                alert("Invalid information");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>

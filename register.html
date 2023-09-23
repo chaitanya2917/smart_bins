@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Registration</title>
+    <link rel="stylesheet" href="register-style.css"> 
+</head>
+<body>
+    <div class="login-container">
+        <h2>Register</h2>
+        <form>
+            <label for="email">✉️Email ID:</label>
+            <input type="text" id="email" name="email" required>
+            <label for="userId">👤User ID:</label>
+            <input type="text" id="userId" name="userId" required>
+            <label for="userPassword">🔑Password:</label>
+            <input type="password" id="userPassword" name="userPassword" required>
+            <label for="confirmUserPassword">🔑Confirm Password:</label>
+            <input type="password" id="confirmUserPassword" name="confirmUserPassword" required>
+            <button type="submit" onclick="register()">Register</button>
+        </form>
+    </div>
+    <script>
+        function register(){
+            var email=document.getElementById("email").value;
+            var userId = document.getElementById("userId").value;
+            var userPassword = document.getElementById("userPassword").value;
+            var confirmUserPassword=document.getElementById("confirmUserPassword").value;
+            if(userId=="" || userPassword=="" || confirmUserPassword=="" || email==""){
+                alert("Field cannot be empty!!");
+                return false;
+            }
+            else if(userPassword!=confirmUserPassword){
+                alert("Password doesn't Match!!");
+                return false;
+            }
+            else{
+                alert("Registerd Successfully");
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
